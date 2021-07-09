@@ -2,12 +2,12 @@ import React from 'react';
 import TreeView from 'react-treeview';
 import 'react-treeview/react-treeview.css';
 import { connect } from 'react-redux'
-import { getMovieDetailsService } from '../redux/MovieService/MovieService.actions'
+import { getMovieDetailsService } from '../redux/actions/moviesList'
 
 class MovieTreeView extends React.Component {
 
     componentDidMount() {
-        this.props.getMoviesList();
+        this.props.getMoviesList("/movies/moviesList");
 
     }
     render() {
@@ -87,7 +87,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMoviesList: () => dispatch(getMovieDetailsService()),
+        getMoviesList: (url) => dispatch(getMovieDetailsService(url)),
 
     }
 }

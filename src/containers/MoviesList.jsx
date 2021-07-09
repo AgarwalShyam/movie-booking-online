@@ -13,13 +13,13 @@ import TableContainer from '../components/TableContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { SelectColumnFilter } from '../common/filters';
 import { MovieCard } from "../components/MovieCard";
-import { getMovieDetailsService } from '../redux/MovieService/MovieService.actions'
+import { getMovieDetailsService } from '../redux/actions/moviesList'
 
 const MoviesList = (props) => {
 
   useEffect(() => {
-    props.getMoviesList();
-  })
+    props.getMoviesList("/movies/moviesList");
+  }, [])
   const { data } = props;
 
   const columns = useMemo(
@@ -106,7 +106,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getMoviesList: () => dispatch(getMovieDetailsService()),
+    getMoviesList: (url) => dispatch(getMovieDetailsService(url)),
 
   }
 }

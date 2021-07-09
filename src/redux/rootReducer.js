@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 
 
-import movieDetailsReducer from './MovieService/MovieService.reducer';
+import movieDetailsReducer from './reducers/moviesList';
 
 
 const rootReducer = combineReducers({

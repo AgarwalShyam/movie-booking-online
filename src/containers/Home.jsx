@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { MovieCard } from '../components/MovieCard'
-import { getMovieDetailsService } from '../redux/MovieService/MovieService.actions'
+import { getMovieDetailsService } from '../redux/actions/moviesList'
 
 
 
 class Home extends Component {
 
   componentDidMount() {
-    this.props.getMoviesList();
+    this.props.getMoviesList("/movies/moviesList");
 
   }
 
@@ -50,7 +50,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    getMoviesList: () => dispatch(getMovieDetailsService()),
+    getMoviesList: (url) => dispatch(getMovieDetailsService(url)),
 
   }
 }

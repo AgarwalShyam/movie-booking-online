@@ -1,1 +1,0 @@
-export const MOVIE_DETAILS = 'MOVIE_DETAILS';
